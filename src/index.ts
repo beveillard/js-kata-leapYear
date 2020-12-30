@@ -1,6 +1,10 @@
 export function leapYear(year) {
-  if (year % 400 == 0) return true;
-  if (year % 100 == 0) return false;
-  if (year % 4 == 0) return true;
+  if (isMultipleOf(400, year)) return true;
+  if (isMultipleOf(100, year)) return false;
+  if (isMultipleOf(4, year)) return true;
   return false;
+}
+
+function isMultipleOf(x, year) {
+  return year % x == 0;
 }
